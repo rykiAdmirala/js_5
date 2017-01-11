@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #f5f5f5;
+	font-family: Arial, sans-serif;
+}
+.wrapper {
+	width: 980px;
+	margin: 0 auto;
+	padding: 30px 0 50px;
+	background: #fff;
+}
+h1 {
+    margin: 0 0 50px;
+    text-align: center;
+}
+.pretty-carousel img {
+	margin: 0 auto;
+	height: 240px;
+	object-fit: cover;
+}
+.bx-wrapper .bx-next {
+    right: -50px;
+}
+.bx-wrapper .bx-prev {
+    left: -50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.pretty-check {
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	cursor: pointer;
+	background: url(paht-to/checkbox.png);
+}
+.pretty-check input {
+	display: none;
+}
