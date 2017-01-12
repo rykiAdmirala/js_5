@@ -9,6 +9,9 @@ $(function() {
 	  slideMargin: 10
 	});
 
+  //Select
+  $('.pretty-select').selectBox();
+
 	//Checkboxes
 	$(".pretty-check").mousedown(function() {
 	  changeCheck($(this));    
@@ -18,18 +21,12 @@ $(function() {
 	});
 	
 
-
+  subMenuInit();
 
 
 });
 
-function changeCheck(el)
-/* 
-  функция смены вида и значения чекбокса
-  el - span контейнер дял обычного чекбокса
-  input - чекбокс
-*/
-{
+function changeCheck(el) {
   var el = el,
       input = el.find("input").eq(0);
       
@@ -43,11 +40,7 @@ function changeCheck(el)
     return true;
 }
 
-function changeCheckStart(el)
-/* 
-  если установлен атрибут checked, меняем вид чекбокса
-*/
-{
+function changeCheckStart(el) {
 var el = el,
     input = el.find("input").eq(0);
 
@@ -55,4 +48,30 @@ var el = el,
     el.css("background-position","0 -17px");  
   }
   return true;
+}
+
+
+function subMenuInit() {
+  var $parentMenuEl = $('.menu li');
+
+  $parentMenuEl
+    .has('.sub-menu')
+    .addClass('parent')
+    .hover(function() {
+      var $subMenu = $(this).find('.sub-menu').eq(0);
+
+      if ( $(this).parent('.sub-menu').length ) {
+
+        var $parentWidth = $(this).outerWidth();
+        
+        $subMenu.css('left', $parentWidth);
+
+      }
+
+      $subMenu
+        .stop()
+        .slideToggle(700, 'easeOutBounce');
+    });
+
+
 }

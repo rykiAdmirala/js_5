@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+ul, ol {
+	list-style: none;
+}
 body {
 	background: #f5f5f5;
 	font-family: Arial, sans-serif;
@@ -9,15 +12,22 @@ body {
 .wrapper {
 	width: 980px;
 	margin: 0 auto;
-	padding: 30px 0 50px;
+	padding: 30px 0 300px;
 	background: #fff;
 }
 h1 {
     margin: 0 0 50px;
     text-align: center;
 }
+h2 {
+    margin: 2em 0 0.9em;
+    text-align: center;
+}
+
+/* Slider */
 .pretty-carousel img {
 	margin: 0 auto;
+	width: 350px;
 	height: 240px;
 	object-fit: cover;
 }
@@ -28,24 +38,90 @@ h1 {
     left: -50px;
 }
 
+/* Select */
+.pretty-select-wrap {
+	text-align: center;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* Checkboxes */
+.pretty-check-wrap,
+.pretty-check-css-wrap {
+	width: 600px;
+	margin: 0 auto;
+}
+.pretty-check-row {
+	margin: 7px 0;
+}
 .pretty-check {
+	display: inline-block;
+	vertical-align: top;
 	width: 17px;
 	height: 17px;
-	display: inline-block;
 	cursor: pointer;
-	background: url(paht-to/checkbox.png);
+	background: url(../img/checkbox-sprite.png);
 }
 .pretty-check input {
 	display: none;
+}
+.pretty-check-css-wrap input {
+	display: none;
+}
+.pretty-check-css-wrap label {
+	cursor: pointer;
+}
+.pretty-check-css-wrap label:before {
+	content: '';
+	display: inline-block;
+	vertical-align: top;
+	width: 17px;
+	height: 17px;
+	margin: 0 9px 0 0;
+	background: url(../img/checkbox-sprite.png);
+}
+.pretty-check-css-wrap input:checked + label:before {
+	background-position: 0 -17px;
+}
+
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background: #6395d0;
+    list-style: none;
+}
+.menu a {
+    display: block;
+    padding: 5px 40px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+.menu a:hover {
+    color: #ffefc2;
+}
+.menu .parent {
+    position: relative;
+}
+.menu .sub-menu {
+	display: none;
+	position: absolute;
+	min-width: 170px;
+	background: #436fa2;
+}
+.menu .sub-menu a {
+    padding: 5px 20px;
+    text-align: left;
+}
+.menu .sub-menu .sub-menu {
+	top: 0;
+}
+.menu .parent > a:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border: 5px solid transparent;
+    border-top-color: #ffffff;
+    margin-left: 8px;
+    margin-top: -2px;
 }

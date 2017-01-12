@@ -5,9 +5,11 @@
 	<title>JS #9-10 | GOIT FE#6</title>
 
 	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/jquery.selectBox.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
 	<script src="js/jquery.bxslider.min.js"></script>
 	<script src="js/jquery.selectBox.min.js"></script>
 	<script src="js/custom.js"></script>
@@ -20,6 +22,10 @@
 		Everything is pretty!
 	</h1>
 
+
+	<h2>
+		Pretty carousel!
+	</h2>
 	<ul class="pretty-carousel">
 		<li><img src="img/slide1.jpg" alt=""></li>
 		<li><img src="img/slide2.jpg" alt=""></li>
@@ -29,6 +35,91 @@
 		<li><img src="img/slide6.jpg" alt=""></li>
 		<li><img src="img/slide7.jpg" alt=""></li>
 	</ul>
+
+	<h2>
+		Pretty select!
+	</h2>
+	<div class="pretty-select-wrap">
+		<select class="pretty-select">
+			<optgroup label="This is pretty option group!">
+				<option value="opt1-yes">Pretty</option>
+				<option value="opt1-no">Not pretty??</option>
+			</optgroup>
+			<optgroup label="But this one is prettier!">
+				<option value="opt2-yes">Agree!</option>
+				<option value="opt2-yesyes">The prettiest!</option>
+			</optgroup>
+		</select>
+	</div>
+	<h2>
+		Pretty checkboxes! (jQuery)
+	</h2>
+	<div class="pretty-check-wrap">
+		<form action="">
+			<div class="pretty-check-row">
+				<span class="pretty-check"><input id="prt-chck1" type="checkbox"></span>
+				<label for="prt-chck1">
+					Check me, if you think I'm more pretty!
+				</label>
+			</div>
+			<div class="pretty-check-row">
+				<span class="pretty-check"><input id="prt-chck2" type="checkbox"></span>
+				<label for="prt-chck2">
+					No, check me!
+				</label>
+			</div>
+		</form>
+	</div>
+
+
+	<h2>
+		Now checkboxes are pretty with CSS only!
+	</h2>
+	<div class="pretty-check-css-wrap">
+		<form action="">
+			<div class="pretty-check-row">
+				<input type="checkbox" id="prt-chck-css1">
+				<label for="prt-chck-css1">I'm good, look at me!</label>
+			</div>
+			<div class="pretty-check-row">
+				<input type="checkbox" id="prt-chck-css2">
+				<label for="prt-chck-css2">Never mind that^ prick, I'm sure we both know who really is better.</label>		
+			</div>
+		</form>
+	</div>
+
+
+	<h2>
+		But what about this menu?
+	</h2>
+	<nav>
+		<ul class="menu">
+			<li><a href="#">Item 1</a></li>
+			<li>
+				<a href="#">Item 2</a>
+				<ul class="sub-menu">
+					<li><a href="#">Sub-Item 1</a></li>
+					<li><a href="#">Sub-Item 2</a></li>
+					<li>
+						<a href="#">Sub-Item 3</a>
+						<ul class="sub-menu">
+							<li><a href="#">Sub-Sub-Item 1</a></li>
+							<li><a href="#">Sub-Sub-Item 2</a></li>
+							<li><a href="#">Sub-Sub-Item 3</a></li>
+							<li><a href="#">Sub-Sub-Item 4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Sub-Item 4</a></li>
+					<li><a href="#">Sub-Item 5</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Item 3</a></li>
+			<li><a href="#">Item 4</a></li>
+			<li><a href="#">Item 5</a></li>
+		</ul>
+	</nav>
+
+
 
 </div>
 </body>
