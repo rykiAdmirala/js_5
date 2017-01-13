@@ -6,21 +6,26 @@ ul, ol {
 	list-style: none;
 }
 body {
-	background: #f5f5f5;
+	background: fixed url(../img/body-bg.jpg) repeat-y top center/cover;
 	font-family: Arial, sans-serif;
 }
 .wrapper {
 	width: 980px;
 	margin: 0 auto;
-	padding: 30px 0 300px;
-	background: #fff;
+	padding: 30px 0;
+}
+section {
+    padding: 30px 0;
+}
+section:nth-child(odd) {
+    background: #fff;
 }
 h1 {
     margin: 0 0 50px;
     text-align: center;
 }
 h2 {
-    margin: 2em 0 0.9em;
+    margin: 0 0 1em;
     text-align: center;
 }
 
@@ -84,10 +89,16 @@ h2 {
 
 
 /* Menu */
+nav {
+	background: #6395d0;
+}
+nav .wrapper {
+	padding: 0;
+	margin-bottom: 700px;
+}
 .menu {
     display: flex;
     justify-content: space-around;
-    background: #6395d0;
     list-style: none;
 }
 .menu a {
@@ -107,11 +118,14 @@ h2 {
 	display: none;
 	position: absolute;
 	min-width: 170px;
+	height: auto;
 	background: #436fa2;
 }
 .menu .sub-menu a {
-    padding: 5px 20px;
+    padding: 0 20px;
     text-align: left;
+    line-height: 35px;
+    white-space: nowrap;
 }
 .menu .sub-menu .sub-menu {
 	top: 0;

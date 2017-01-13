@@ -51,27 +51,76 @@ var el = el,
 }
 
 
+// Making incredible and TOTALLY unnecessary animation of submenu
 function subMenuInit() {
-  var $parentMenuEl = $('.menu li');
 
-  $parentMenuEl
-    .has('.sub-menu')
-    .addClass('parent')
-    .hover(function() {
-      var $subMenu = $(this).find('.sub-menu').eq(0);
+  var bgColor = ['#5f43a2', '#aa41ad', '#c53573'];
+  var $parentMenuEl = $('.sub-menu').parent().addClass('parent');
 
-      if ( $(this).parent('.sub-menu').length ) {
+  $parentMenuEl.each(function(i) {
+    var $subMenu = $(this).find('.sub-menu').eq(0);
 
-        var $parentWidth = $(this).outerWidth();
-        
-        $subMenu.css('left', $parentWidth);
 
+    // Storing chars of every submenu.
+    // Show\Hide of _all_ submenus are necessary for correct calculations
+    $('.sub-menu').show();
+
+      if (i > 0) {
+      /* If nesting level is 2 or higher, we
+      1. display submenu at the right side of parent menu item
+      2. setting the bg the same as parent submenu */
+        var parentWidth = $(this).width();
+        $subMenu.css({
+          'left' : parentWidth,
+          'background-color' : bgColor[i-1]
+        });
       }
 
-      $subMenu
-        .stop()
-        .slideToggle(700, 'easeOutBounce');
-    });
+      var subMenuHeight = $subMenu.outerHeight();
+      var subMenuWidth = $subMenu.outerWidth();
+      var subMenuInitBgColor = $subMenu.css('background-color');
 
+    $('.sub-menu').hide();
 
+    $(this).hover(
+      function()
+      {
+
+        // if ( $(this).parent('.sub-menu').length ) {
+        // }
+
+        $subMenu
+          .stop()
+          .css({
+            // Resetting initial values for proper animation
+            'min-width' : 'initial',
+            'width' : '0',
+            'height' : '0',
+            'display':'block'
+          })
+          .animate({
+            'width' : subMenuWidth,
+            'height' : subMenuHeight,
+            'background-color' : bgColor[i]
+          }, 1000, 'easeOutBounce');
+
+      }, function()
+      {
+        $subMenu
+          .stop()
+          .animate({
+            'width' : '0',
+            'height' : '0',
+            'background-color' : subMenuInitBgColor
+            }, 1000, 'easeOutBack', function() {
+              $(this).css({
+                // Returning values to its initial state
+                'display' : 'none',
+                'height' : subMenuHeight,
+                'width' : subMenuWidth,
+              });
+          });          
+      }
+    );
+  });
 }
