@@ -6,7 +6,8 @@ ul, ol {
 	list-style: none;
 }
 body {
-	background: fixed url(../img/body-bg.jpg) repeat-y top center/cover;
+	background: rgba(255, 138, 240, 0.08) fixed url(../img/body-bg.jpg) repeat-y top center/cover;
+	background-blend-mode: darken;
 	font-family: Arial, sans-serif;
 }
 .wrapper {
@@ -108,7 +109,8 @@ nav .wrapper {
     text-align: center;
     text-decoration: none;
 }
-.menu a:hover {
+.menu a:hover,
+.menu .opened > a {
     color: #ffefc2;
 }
 .menu .parent {
@@ -135,7 +137,13 @@ nav .wrapper {
     position: absolute;
     top: 50%;
     border: 5px solid transparent;
-    border-top-color: #ffffff;
+    border-top-color: inherit;
     margin-left: 8px;
     margin-top: -2px;
+}
+.menu .sub-menu .parent > a:after {
+    right: 4px;
+    margin-top: -6px;
+    border-top-color: transparent;
+    border-left-color: inherit;
 }

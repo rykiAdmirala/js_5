@@ -9,6 +9,10 @@ $(function() {
 	  slideMargin: 10
 	});
 
+  lightbox.option({
+    'resizeDuration': 300
+  });
+
   //Select
   $('.pretty-select').selectBox();
 
@@ -61,10 +65,9 @@ function subMenuInit() {
     var $subMenu = $(this).find('.sub-menu').eq(0);
 
 
-    // Storing chars of every submenu.
+    // Storing chars of every submenu before .hover()
     // Show\Hide of _all_ submenus are necessary for correct calculations
     $('.sub-menu').show();
-
       if (i > 0) {
       /* If nesting level is 2 or higher, we
       1. display submenu at the right side of parent menu item
@@ -75,19 +78,16 @@ function subMenuInit() {
           'background-color' : bgColor[i-1]
         });
       }
-
       var subMenuHeight = $subMenu.outerHeight();
       var subMenuWidth = $subMenu.outerWidth();
       var subMenuInitBgColor = $subMenu.css('background-color');
-
     $('.sub-menu').hide();
+
 
     $(this).hover(
       function()
       {
-
-        // if ( $(this).parent('.sub-menu').length ) {
-        // }
+        $(this).addClass('opened');
 
         $subMenu
           .stop()
@@ -106,6 +106,8 @@ function subMenuInit() {
 
       }, function()
       {
+        $(this).removeClass('opened');
+
         $subMenu
           .stop()
           .animate({
